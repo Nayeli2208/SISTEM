@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Principal</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
+	<link rel="stylesheet" href="../css/all.css">
+	<link rel="stylesheet" href="../css/sweetalert2.min.css">
+	<script src="../js/sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+	<main class="full-box main-container">
+		<section class="full-box nav-lateral">
+			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
+			<div class="full-box nav-lateral-content">
+				<figure class="full-box nav-lateral-avatar">
+					<figcaption class="roboto-medium text-center">NCLL<br><small
+							class="roboto-condensed-light">ADMINISTRADOR</small>
+					</figcaption>
+				</figure>
+				<div class="full-box nav-lateral-bar"></div>
+				<nav class="full-box nav-lateral-menu">
+					<ul>
+						<li>
+							<a href="principal.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp; </a>
+						</li>
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-user-nurse"></i> &nbsp; Materiales<i
+									class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="../admin/materiales/agrega_material.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar </a>
+								</li>
+								<li>
+									<a href="../admin/materiales/lista_materiales.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp;
+										Lista</a>
+								</li>
+								<li>
+									<a href="../admin/materiales/busca_materiales.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar </a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-ambulance"></i> &nbsp; Ambulancias<i
+									class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="../admin/ambulancia/Agregar.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar</a>
+								</li>
+								<li>
+									<a href="../admin/ambulancia/ListaMateriales.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista</a>
+								</li>
+								<li>
+									<a href="../admin/ambulancia/BuscarAmbulancia.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar </a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-user-shield"></i> &nbsp; Paciente<i class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="../admin/paciente/hojaprehospitalaria.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Informe</a>
+								</li>
+								<li>
+									<a href="../admin/paciente/listapaciente.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp;Lista </a>
+								</li>
+								<li>
+									<a href="../admin/paciente/Buscarpaciente.html"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; Buscar </a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</section>
+
+
+		<section class="full-box page-content">
+			<nav class="full-box navbar-info">
+				<a href="#" class="float-left show-nav-lateral">
+					<i class="fas fa-exchange-alt"></i>
+				</a>
+				<a href="bitacora.php">
+					<i class="fas fa-user-cog"></i>
+				</a>
+				<a href="../index.html" class="btn-exit-system">
+					<i class="fas fa-power-off"></i>
+				</a>
+			</nav>
+
+
+			<div class="full-box page-header">
+				<h3 class="text-left">
+					<i class="fas fa-school"></i> &nbsp;Sistema Estatal de Urgencias de Paramédicos Macuspana
+				</h3>
+				<p class="text-justify">shelilopez696@gmail.com &nbsp; Lopez Nayeli 2023</p>
+			</div>
+
+
+			<div class="full-box tile-container">
+
+				<a href="../admin/materiales/agrega_material.html" class="tile">
+					<div class="tile-tittle">Materiales</div>
+					<div class="tile-icon">
+						<i class="fas fa-user-nurse"></i>
+					</div>
+				</a>
+
+				<a href="../admin/ambulancia/Agregar.html" class="tile">
+					<div class="tile-tittle">Ambulancias</div>
+					<div class="tile-icon">
+						<i class="fas fa-ambulance"></i>
+					</div>
+				</a>
+
+				<a href="../admin/paciente/Buscarpaciente.html" class="tile">
+					<div class="tile-tittle">Paciente</div>
+					<div class="tile-icon">
+						<i class="fas fa-user-shield"></i>
+					</div>
+				</a>
+			</div>
+		</section>
+	</main>
+
+
+
+	<script src="../js/jquery-3.4.1.min.js"></script>
+
+	<script src="../js/popper.min.js"></script>
+
+
+	<script src="../js/bootstrap.min.js"></script>
+
+
+	<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+	<script src="../js/bootstrap-material-design.min.js"></script>
+	<script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
+
+	<script src="main.js"></script>
+</body>
+
+</html>

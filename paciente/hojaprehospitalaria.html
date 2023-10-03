@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>PACIENTE</title>
+	<!--link de para la interaccion de las interfaces-->
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-material-design.min.css">
+	<link rel="stylesheet" href="../css/all.css">
+	<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+	<main class="full-box main-container">
+		<section class="full-box nav-lateral"><!--inicio de 1ra seccion-->
+			<!--inicio de seccion para  el uso de las barras de navegacion laterales-->
+			<div class="full-box nav-lateral-bg show-nav-lateral"></div>
+			<div class="full-box nav-lateral-content">
+				<figure class="full-box nav-lateral-avatar">
+					<figcaption class="roboto-medium text-center">Paramédicos<br>
+						<small class="roboto-condensed-light">Usuario</small></figcaption>
+				</figure>
+				<div class="full-box nav-lateral-bar"></div>
+				<nav class="full-box nav-lateral-menu"><!--inicio de navegacion lateral-->
+					<ul>
+						<li>
+							<a href="../principal.html"><i class="fab fa-dashcube fa-fw"></i> &nbsp;INICIO</a>
+						</li>
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-user-nurse"></i> &nbsp; Materiales<i
+									class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="../materiales/agrega_material.html"><i class="fas fa-plus fa-fw"></i>
+										&nbsp; Agregar
+									</a>
+								</li>
+								<li>
+									<a href="../materiales/lista_materiales.php"><i
+											class="fas fa-clipboard-list fa-fw"></i>
+										&nbsp;
+										Lista</a>
+								</li>
+								<li>
+									<a href="../materiales/busca_materiales_a.php"><i class="fas fa-search fa-fw"></i>
+										&nbsp; Buscar
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="#" class="nav-btn-submenu"><i class="fas fa-user-shield"></i> &nbsp; Paciente<i
+									class="fas fa-chevron-down"></i></a>
+							<ul>
+								<li>
+									<a href="hojaprehospitalaria.html"><i class="fas fa-plus fa-fw"></i> &nbsp;
+										Informe</a>
+								</li>
+								<li>
+									<a href="Buscarpaciente.html"><i class="fas fa-search-dollar fa-fw"></i> &nbsp;
+										Buscar </a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav><!--fin de navegador lateral-->
+			</div>
+		</section><!--fin de 1ra seccion-->
+		
+		<section class="full-box page-content"><!--inicio de la nueva seccion-->
+			<nav class="full-box navbar-info">
+				<a href="#" class="float-left show-nav-lateral">
+					<i class="fas fa-exchange-alt"></i>
+				</a>
+			</nav>
+			<div class="full-box page-header">
+				<h3 class="text-left"><i class="fas fa-plus fa-fw"></i> NUEVO</h3>
+			</div>
+			<div class="container-fluid">
+				<ul class="full-box list-unstyled page-nav-tabs">
+					<li>
+						<a class="active" href="hojaprehospitalaria.html"><i class="fas fa-plus fa-fw"></i>NUEVO</a>
+					</li>
+					<li>
+						<a href="Buscarpaciente.html"><i class="fas fa-search-dollar fa-fw"></i> BUSCAR </a>
+					</li>
+				</ul>
+			</div>
+
+			<!--CONTENIDO DEL FORMULARIO-->
+			<div class="container-fluid">
+				<div class="container-fluid form-neon">
+					<form id="form"><!--inicio del form del formulario-->
+						<fieldset>
+							<legend><i class="far fa-plus-square"></i> HOJA DE ATENCIÓN PREHOSPITALARIA</legend>
+							<div class="container-fluid"><!--inicio del contenido-->
+								<div class="row"><!--inicio del lineado del contenido-->
+									<div class="col-12 col-md-4">
+										<div class="form-group">
+											<label for="folio">Folio</label>
+											<input type="number" class="form-control" name="folio" id="folio">
+										</div>
+									</div>
+									<div class="col-12 col-md-4">
+										<div class="form-group">
+											<label for="ambulancia">Ambulancia</label>
+											<input type="text" class="form-control" name="ambulancia"
+												id="ambulancia">
+										</div>
+									</div>
+									<div class="col-12 col-md-4">
+										<div class="form-group">
+											<label for="sm_dia">Día de la semana</label>
+											<select class="form-control" name="sm_dia" id="sm_dia">
+												<option value="0">Seleccione una opción</option>
+												<option value="Lunes">Lunes</option>
+												<option value="Martes">Martes</option>
+												<option value="Miercoles">Miércoles</option>
+												<option value="Jueves">Jueves</option>
+												<option value="Viernes">Viernes</option>
+												<option value="Sábado">Sábado</option>
+												<option value="Domingo">Domingo</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-md-4">
+												<label for="f_fecha">Fecha</label>
+												<input type="date" class="form-control" name="f_fecha" id="f_fecha">
+											</div>
+											<div class="col-md-4">
+												<label for="h_hora">Hora</label>
+												<input type="time" class="form-control" name="h_hora" id="h_hora">
+											</div>
+											<div class="col-md-4">
+												<label for="tp_servicio">Tipo de servicio</label>
+												<select class="form-select" name="tp_servicio" id="tp_servicio">
+													<option value="">Seleccione una opción</option>
+													<option value="urgencia">Urgencia</option>
+													<option value="traslado">Traslado</option>
+												</select>
+											</div>
+										</div>
+										<br>
+										<br>
+										<div class="container-fluid">
+											<p class="text-center roboto-medium">CLIMA</p><!--principal 2-->
+										</div>
+										<div class="row">
+											<div class="col-md-4">
+												<label for="" class="from-label">SOLEADO</label>&nbsp;
+												<input type="checkbox" name="clima" id="sol" value="0" checked>&nbsp;&nbsp;&nbsp;
+											</div>
+											<div class="col-md-4">
+												<label for="" >NEBLINA</label>&nbsp;
+												<input type="checkbox" name="clima" id="neb" value="1" >&nbsp;&nbsp;&nbsp;
+											</div>
+											<div class="col-md-4">
+												<label for="nublado" >NUBLADO</label>
+												<input type="checkbox" name="clima" id="nublado" value="2">&nbsp;&nbsp;&nbsp;
+											</div>
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-md-4">
+												<label for="lluvioso" >LLUVIOSO</label>
+												<input type="checkbox" name="clima" id="lluvioso" value="3" >&nbsp;&nbsp;&nbsp;
+											</div>
+											<div class="col-md-4">
+												<label for="despejado" >DESPEJADO</label>
+												<input type="checkbox" name="clima" id="despejado" value="4" >&nbsp;&nbsp;&nbsp;
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<br>
+								<br>
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="o_operador" class="bmd-label-floating">OPERADOR</label>
+												<input type="text" class="form-control" name="o_operador" id="o_operador">
+											</div>
+										</div>
+										<div class="col-12 col-md-6">
+											<div class="form-group">
+												<label for="bre" class="bmd-label-floating">TUM.1</label>
+												<input type="text" class="form-control" name="1_nombre" id="bre">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="j_servicio" class="bmd-label-floating">JEFE DE SERVICIO</label>
+												<input type="text" class="form-control" name="j_servicio"
+													id="j_servicio">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label for="brui" class="bmd-label-floating">TUM.2</label>
+												<input type="text" class="form-control" name="2_nombre" id="brui">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<label for="ubi_servicio" class="bmd-label-floating">UBICACIÓN DE SERVICIO</label>
+												<input type="text" class="form-control" name="ubi_servicio"
+													id="ubi_servicio">
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<label for="a_incidente" class="bmd-label-floating">AUTORIDADES PARTICIPARON EN EL INCIDENTE</label>
+												<input type="text" class="form-control" name="a_incidente" id="a_incidente">
+											</div>
+										</div>
+									</div>
+								</div>
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<hr style="border:0px; border-top: 5px double #000;">
+									<p class="text-center roboto-medium">DATOS DEL PACIENTE</p><!--principal 2-->
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<label for="nom" >Nombre</label>
+										<input type="text" class="form-control" name="nom" id="nom">
+									</div>
+									<div class="col-md-4">
+										<label for="edad" >Edad</label>
+										<input type="number" class="form-control" name="edad" id="edad">
+									</div>
+									<div class="col-md-4">
+										<label for="sexo" >Sexo</label>
+										<select class="form-control" name="sexo" id="sexo">
+											<option value="">Seleccione una opción</option>
+											<option value="Masculino">Masculino</option>
+											<option value="Femenino">Femenino</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<label for="d_direccion" >Dirección</label>
+										<input type="text" class="form-control" name="d_ireccion" id="d_direccion">
+									</div>
+
+									<div class="col-md-4">
+										<label for="t_telefono">Teléfono</label>
+										<input type="number" class="form-control" name="t_telefono" id="t_telefono">
+									</div>
+									<div class="col-md-4">
+										<label for="c_ocupacion">Ocupación</label>
+										<input type="text" class="form-control" name="c_ocupacion" id="c_ocupacion">
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-md-4">
+										<label for="d_cohabitante">Derechohabiente</label>
+										<input type="text" class="form-control" name="d_cohabitante" id="d_cohabitante">
+									</div>
+									<div class="col-md-4">
+										<label for="escolaridad">Escolaridad</label>
+										<input type="text" class="form-control" name="escolaridad" id="escolaridad">
+									</div>
+
+									<div class="col-md-4">
+										<label class="bmd-label-floating">Lugar de Ocurrencia</label>
+										<select class="form-control" name="lugar_ocurrencia" id="lugar_ocurrencia">
+											<option value="" selected="" disabled="">Seleccione una opción</option>
+											<option value="HOJAR">HOGAR</option>
+											<option value="ESCUELA">ESCUELA</option>
+											<option value="TRABAJO">TRABAJO</option>
+											<option value="VIA PUB">VIA PUB.</option>
+											<option value="RECREACIÓN Y DEPORTE">RECREACIÓN Y DEPORTE</option>
+											<option value="CLUB-CANTINA-BAR">CLUB-CANTINA BAR</option>
+											<option value="HOTEL">HOTEL</option>
+											<option value="CARRETERA">CARRETERA</option>
+											<option value="OTRO">OTRO</option>
+										</select>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">ANTECEDENTES DE ENFERMEDAD</p><!--principal 3-->
+								</div>
+								<div class="col-12 col-md-12">
+									<div class="form-group">
+										<label>CARDIOVASCULAR</label>&nbsp;
+										<input type="checkbox" name="c_vascular" id="c_vascular">&nbsp;&nbsp;&nbsp;
+										<label class="bmd-label-floating">METABÓLICO</label>
+										<input type="checkbox" name="metbolico" id="metabolico">&nbsp;&nbsp;&nbsp;
+										<label class="bmd-label-floating">NEUROLÓGICO</label>
+										<input type="checkbox" name="neurologico" id="neurologico">&nbsp;&nbsp;&nbsp;
+										<label class="bmd-label-floating">ALÉRGICO</label>
+										<input type="checkbox" name="alergico" id="alergico">&nbsp;&nbsp;&nbsp;
+										<label class="bmd-label-floating">OTRO</label>
+										<input type="checkbox" name="otro" id="otro">
+									</div>
+									<div class="col-12 col-md-12">
+										<div class="form-group">
+											<label for="especificar">Especificar</label>
+											<input type="text" class="form-control" name="especificar" id="especificar">
+										</div>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">ANTECEDENTES DEL INCIDENTE</p><!--principal 4-->
+								</div>
+								<div class="col-12 col-md-12">
+									<div class="form-group">
+										<label>CAUSA DE LA URGENCIA:</label>&nbsp;&nbsp;
+										<label class="bmd-label-floating">Traumática</label>
+										<input type="checkbox" name="tramatica" id="traumatica">&nbsp;&nbsp;&nbsp;
+										<label class="bmd-label-floating">No Traumática</label>
+										<input type="checkbox" name="no_traumatica" id="no_traumatica">
+									</div>
+								</div>
+								<div class="col-12 col-md-12">
+									<div class="form-group">
+										<label for="especifico">Especificar</label>
+										<input type="text" class="form-control" name="especifico" id="especifico">
+									</div>
+								</div>
+								<div class="col-12 col-md-12">
+									<div class="form-group">
+										<label for="cinematica">Cinemática del Incidente</label>
+										<input type="text" class="form-control" name="cinematica" id="cinematica">
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">MANEJO DEL PACIENTE</p><!--principal 5-->
+									<div class="row">
+										<div class="col-sm-4">
+											<label>VÍA ÁREA:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+											<label>PERMEABLE:</label>&nbsp;&nbsp;
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="per_si" id="per_si">&nbsp;&nbsp;
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="per_no" id="per_no">
+										</div>
+										<div class="col-sm-4">
+											<label>SECRECIONES Y VOMITO:</label>&nbsp;&nbsp;
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="sv_si" id="v_si">&nbsp;&nbsp;
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="sv_no" id="sv_no">
+										</div>
+										<div class="col-sm-4">
+											<label>ASPIRACIÓN:</label>&nbsp;&nbsp;
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="as_si" id="as_si">&nbsp;&nbsp;
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="as_no" id="as_no">
+										</div>
+									</div><br>
+
+									<div class="row">
+										<div class="col-sm-4">
+											<label>CÁNULA:</label>&nbsp;&nbsp;&nbsp;
+											<label>OROFARÍNGEA</label>&nbsp;&nbsp;
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="can_si" id="can_si">&nbsp;&nbsp;
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="can_no" id="can_no">&nbsp;&nbsp;&nbsp;&nbsp;
+										</div>
+										<div class="col-sm-4">
+											<label>NAZOROFARINGEA</label>&nbsp;&nbsp;
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="naz_si" id="naz_si">&nbsp;&nbsp;
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="naz_no" id="naz_no">
+										</div>
+										<div class="col-sm-4">
+											<label>TUBO ENDOTRAQUEAL</label>&nbsp;&nbsp;
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="tub_si" id="tub_si">&nbsp;&nbsp;
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="tub_no" id="tub_no">&nbsp;&nbsp;
+										</div>
+									</div><br>
+
+									<div class="row">
+										<div class="col-sm-4">
+											<label>COLLARÍN CERVICAL</label>&nbsp;&nbsp;
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="ll_si" id="ll_si">&nbsp;&nbsp;
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="ll_no" id="ll_no">&nbsp;&nbsp;
+										</div>
+										<div class="col-sm-5">
+											<label>RUIDOS RESPIRATORIOS</label>&nbsp;&nbsp;
+											<label>PRESENTES</label>&nbsp;&nbsp;
+											<input type="checkbox" name="presente" id="presente">&nbsp;&nbsp;
+											<label>AUSENTES</label>
+											<input type="checkbox" name="ausente" id="ausente">&nbsp;&nbsp;
+										</div>
+									</div><br>
+
+									<div class="row">
+										<div class="col-sm-12">
+											<label>TIPO DE OXIGENACIÓN:</label>&nbsp;&nbsp;
+											<label class="bmd-label-floating">BVM C/RESERVORIO CON OXIGENO</label>
+											<input type="checkbox" name="tipo_bvm" id="tipo_bvm">&nbsp;&nbsp;
+											<label class="bmd-label-floating">MASCARILLA FACIAL C/RESERVORIO</label>
+											<input type="checkbox" name="tipo_mas" id="tipo_mas">&nbsp;&nbsp;
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-5">
+											<label>MANIOBRAS DE REANIMACIÓN:</label>&nbsp;&nbsp;
+											<label>SI</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>NO</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+										<div class="col-sm-4">
+											<label for="tm" >Tiempo:</label>
+											<input type="text" class="form-control" name="tm" id="tm">
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-12">
+											<label>CIRCULACIÓN Y CONTROL DE HEMORRAGIAS:</label>&nbsp;&nbsp;
+											<label>PRESIÓN DIRECTA</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>VENDAJES</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+									</div>
+									<br>
+									<p class="text-justify">LÍQUIDOS ADMINISTRADOS</p>
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="tl">TIPO DE LIQUIDO</label>
+											<input type="text" class="form-control" name="tl" id="tl">
+										</div>
+										<br>
+										<div class="col-sm-6">
+											<label for="cdd">CANTIDAD</label>
+											<input type="text" class="form-control" name="cdd" id="cdd">&nbsp;&nbsp;
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-12">
+											<label>FÉRULAS Y EMPAQUETAMIENTO:</label>
+											<label>ESPINAL LARGA:</label>
+											<label>SI</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>NO</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+											<label>EMPAQUETAMIENTO</label>
+											<label>SI</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>NO</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-7">
+											<label>POSICIÓN EN EL QUE SE ENCONTRÓ EL PACIENTE:</label>&nbsp;&nbsp;
+											<label>SENTADO</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>ACOSTADO</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+										<div class="col-sm-5">
+											<label for="ecp">ESPECIFIQUE:</label>
+											<input type="text" class="form-control" name="ecp" id="ecp">
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-12">
+											<label>PRIORIDAD DEL PACIENTE:</label>&nbsp;&nbsp;
+											<label>ROJA</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>AMARILLA</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+											<label>VERDE</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>NEGRO</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">EXPLORACIÓN FÍSICA</p><!--separacion 6-->
+									<div id="table" class="table-editable ">
+										<table border="1" class="table table-bordered table-responsive-md table-striped text-center table-dark table-sm">
+											<!--inicio de tabla-->
+											<thead>
+												<tr>
+													<th class="text-center">HORARIO</th>
+													<th class="text-center">FR</th>
+													<th class="text-center">FC</th>
+													<th class="text-center">TA</th>
+													<th class="text-center">TEMP</th>
+													<th class="text-center">OXI</th>
+													<th class="text-center">GLASGOW</th>
+													<th class="text-center">GLUCOSA</th>
+													<th class="text-center">LLENADO CAPILAR</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+
+												</tr>
+
+												<tr>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+													<td class="pt-3-half" contenteditable="true">--</td>
+												</tr>
+											</tbody>
+										</table><!--fin de tabla-->
+									</div>
+									<div class="row">
+										<div class="col-sm-12">
+											<label>PUPILAS:</label>&nbsp;&nbsp;
+											<label>IGUALES</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>DESIGUALES</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+											<label>NO REACTIVAS</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>NEGRO</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-12">
+											<label>COLOR PIEL:</label>&nbsp;&nbsp;
+											<label>ROSADA</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="maniobras_si">&nbsp;&nbsp;
+											<label>ROJA</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+											<label>PÁLIDA</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>CIANOSIS</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+											<label>MARMÓREA</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+									</div>
+									<br>
+									<div class="row">
+										<div class="col-sm-4">
+											<label>PIEL:</label>&nbsp;&nbsp;
+											<label>SECA</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>HÚMEDA</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+										<div class="col-sm-6">
+											<label>TEMPERATURA:</label>&nbsp;&nbsp;
+											<label>CALIENTE</label>&nbsp;&nbsp;
+											<input type="checkbox" name="maniobras_si" id="mniobras_si">&nbsp;&nbsp;
+											<label>TIBIA</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+											<label>FRÍA</label>
+											<input type="checkbox" name="maniobras_no" id="maniobras_no">&nbsp;&nbsp;
+										</div>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">LOCALIZACIÓN DE LESIONES</p><!--principal 7-->
+									<style>
+										table {
+										  border-collapse: collapse;
+										  width: 50%;
+										  margin: auto;
+										}
+									  
+										th, td {
+										  border: 1px solid black;
+										  padding: 8px;
+										  text-align: center;
+										}
+									  
+										td.selected {
+										  background-color: rgb(238, 80, 6);
+										}
+									  </style>
+									  <table id="miTabla" class="table-sm table-responsive-md ">
+										<!--inicio de tabla-->
+										<thead>
+											<tr>
+												<th></th>
+												<th class="text-center">Laceracion/<br>Abrasion</th>
+												<th class="text-center">Confusion/<br>Magulladura</th>
+												<th class="text-center">Quemadura</th>
+												<th class="text-center">Herida</th>
+												<th class="text-center">Localizacion/<br>Esquince</th>
+												<th class="text-center">Fractura</th>
+												<th class="text-center">Amputacion/<br>Avulsion</th>
+												<th class="text-center">Picadura/<br>Mordedura</th>
+												<th class="text-center">Otro</th>
+											</tr>
+										</thead>
+										<tbody>
+										
+											<tr>
+												<th>Craneo</th>
+												<td>101</td>
+												<td>201</td>
+												<td>301</td>
+												<td>401</td>
+												<td>501</td>
+												<td>601</td>
+												<td>701</td>
+												<td>801</td>
+												<td>901</td>
+
+											</tr>
+
+											<tr>
+												<th>Cara</th>
+												<td>102</td>
+												<td>202</td>
+												<td>302</td>
+												<td>402</td>
+												<td>502</td>
+												<td>602</td>
+												<td>702</td>
+												<td>802</td>
+												<td>902</td>
+											</tr>
+
+											<tr>
+												<th>Ojos</th>
+												<td>103</td>
+												<td>203</td>
+												<td>303</td>
+												<td>403</td>
+												<td>503</td>
+												<td>603</td>
+												<td>703</td>
+												<td>803</td>
+												<td>903</td>
+
+											</tr>
+
+											<tr>
+												<th>Cuello</th>
+												<td>104</td>
+												<td>204</td>
+												<td>304</td>
+												<td>404</td>
+												<td>504</td>
+												<td>604</td>
+												<td>704</td>
+												<td>804</td>
+												<td>904</td>
+
+											</tr>
+
+											<tr>
+												<th>Torax</th>
+												<td>105</td>
+												<td>205</td>
+												<td>305</td>
+												<td>405</td>
+												<td>505</td>
+												<td>605</td>
+												<td>705</td>
+												<td>805</td>
+												<td>905</td>
+											</tr>
+
+											<tr>
+												<th>Colum.vert</th>
+												<td>106</td>
+												<td>206</td>
+												<td>306</td>
+												<td>406</td>
+												<td>506</td>
+												<td>606</td>
+												<td>706</td>
+												<td>806</td>
+												<td>806</td>
+
+											</tr>
+
+											<tr>
+												<th>Ext.super</th>
+												<td>107</td>
+												<td>207</td>
+												<td>307</td>
+												<td>407</td>
+												<td>507</td>
+												<td>607</td>
+												<td>707</td>
+												<td>807</td>
+												<td>907</td>
+											</tr>
+
+											<tr>
+												<th>Mano</th>
+												<td>108</td>
+												<td>208</td>
+												<td>308</td>
+												<td>408</td>
+												<td>508</td>
+												<td>608</td>
+												<td>708</td>
+												<td>808</td>
+												<td>908</td>
+
+											</tr>
+
+											<tr>
+												<th>Dedos mano</th>
+												<td>109</td>
+												<td>209</td>
+												<td>309</td>
+												<td>409</td>
+												<td>509</td>
+												<td>609</td>
+												<td>709</td>
+												<td>809</td>
+												<td>909</td>
+
+											</tr>
+
+											<tr>
+												<th>Abdomen</th>
+												<td>110</td>
+												<td>210</td>
+												<td>310</td>
+												<td>410</td>
+												<td>510</td>
+												<td>610</td>
+												<td>710</td>
+												<td>810</td>
+												<td>910</td>
+											</tr>
+
+											<tr>
+												<th>Genitales</th>
+												<td>111</td>
+												<td>211</td>
+												<td>311</td>
+												<td>411</td>
+												<td>511</td>
+												<td>611</td>
+												<td>711</td>
+												<td>811</td>
+												<td>911</td>
+
+											</tr>
+
+											<tr>
+												<th>Ext. infer</th>
+												<td>112</td>
+												<td>212</td>
+												<td>312</td>
+												<td>412</td>
+												<td>512</td>
+												<td>612</td>
+												<td>712</td>
+												<td>812</td>
+												<td>912</td>
+
+											</tr>
+
+											<tr>
+												<th>Pies</th>
+												<td>113</td>
+												<td>213</td>
+												<td>313</td>
+												<td>413</td>
+												<td>513</td>
+												<td>613</td>
+												<td>713</td>
+												<td>813</td>
+												<td>913</td>
+
+											</tr>
+
+											<tr>
+												<th>Dedos pie</th>
+												<td>114</td>
+												<td>214</td>
+												<td>314</td>
+												<td>414</td>
+												<td>514</td>
+												<td>614</td>
+												<td>714</td>
+												<td>814</td>
+												<td>914</td>
+
+											</tr>
+
+											<tr>
+												<th>Pelvis</th>
+												<td>115</td>
+												<td>215</td>
+												<td>315</td>
+												<td>415</td>
+												<td>515</td>
+												<td>615</td>
+												<td>715</td>
+												<td>815</td>
+												<td>915</td>
+
+											</tr>
+										</tbody>
+									</table><!--fin de tabla-->
+									<script>
+										const cells = document.querySelectorAll('#miTabla td');
+									  
+										cells.forEach(cell => {
+										  cell.addEventListener('click', function() {
+											if (!this.classList.contains('selected')) {
+											  this.classList.add('selected');
+											} else {
+											  this.classList.remove('selected');
+											}
+										  });
+										});
+									  </script>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">AGENTE DE LESIÓN</p><!--principal 8-->
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-5">
+												<input type="radio" name="au" id="au">
+												<label class="from-label">&nbsp; AUTOMOVILÍSTICO</label>&nbsp;&nbsp;
+												<label>PUBLICO</label>
+												<input type="checkbox" name="publico" id="publico">
+												<label>&nbsp;&nbsp;PRIVADO</label>
+												<input type="checkbox" name="privado" id="privado">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="checkbox" name="intoxicacion" id="intoxicacion">
+												<label>&nbsp; INTOXICACIÓN</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<input type="checkbox" name="golpes" id="golpes">
+												<label>&nbsp;GOLPE CONTRAPISO O PARED</label>
+											</div>
+											<div class="col-sm-6">
+												<input type="checkbox" name="objeto" id="objeto">
+												<label>&nbsp; OBJ. PUNZOCORTANTE</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<input type="checkbox" name="atropellado" id="atropellado">
+												<label>&nbsp;ATROPELLAMIENTO PEATONAL</label>
+											</div>
+											<div class="col-sm-6">
+												<input type="checkbox" name="golpes_piesmanos" id="golpes_piesmanos">
+												<label>&nbsp;GOLPES PIE,MANO</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<input type="checkbox" name="atrop_moto" id="atrop_moto">
+												<label>&nbsp;ATROPELLAMIENTO EN MOTOC.</label>
+											</div>
+											<div class="col-sm-6">
+												<input type="checkbox" name="arma_fuego" id="arma_fuego">
+												<label>&nbsp;ARMA DE FUEGO</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<input type="checkbox" name="atrop_bici" id="atrop_bici">
+												<label>&nbsp;ATROPELLAMIENTO BICICLETA</label>
+											</div>
+											<div class="col-sm-6">
+												<input type="checkbox" name="enfermedad" id="enfermedad">
+												<label>&nbsp;ENFERMEDAD</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<input type="checkbox" name="caida" id="caida">
+												<label>&nbsp;CAÍDA</label>
+											</div>
+											<div class="col-sm-6">
+												<input type="checkbox" name="i_suicidio" id="i_suicidio">
+												<label>&nbsp;INTENTO DE SUICIDIO</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<input type="checkbox" name="quemdura" id="quemadura">
+												<label>&nbsp;QUEMADURA</label>
+											</div>
+											<div class="col-sm-6">
+												<input type="checkbox" name="animal" id="animal">
+												<label>&nbsp;ANIMAL</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-5">
+												<input type="checkbox" name="contuso" id="contuso">
+												<label>&nbsp;OBJ CONTUSO</label>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<label>OTRO</label>
+												<input type="text" class="form-control" id="opcion" name="opcion"
+													placeholder="Ingrese infromacion">
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+							<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">CONCLUSIÓN/ATROPELLAMIENTO</p><!--principal 9-->
+									<label>VEHÍCULO</label>
+									<div class="row">
+										<div class="col-sm-3">
+											<label for="marca">MARCA:</label>
+											<input type="text" class="form-control" id="marca" name="marca" placeholder="Ingrese la marca del vehiculo">
+										</div>
+										<div class="col-sm-3">
+											<label for="tipo">TIPO:</label><br>
+											<input type="text" class="form-control" id="tipo" name="tipo" placeholder="Ingrese el tipo">
+										</div>
+										<div class="col-sm-3">
+											<label for="modelo">MODELO:</label><br>
+											<input type="text" class="form-control" id="modelo" name="modelo" placeholder="Ingrese el modelo">
+										</div>
+										<div class="col-sm-3">
+											<label for="clr" >COLOR:</label><br>
+											<input type="text" class="form-control" id="clr" name="clr"placeholder="Ingrese el color">
+										</div>
+									</div><br><br><!--separdarores  o salto de lineas-->
+									<div class="row">
+										<div class="col-sm-4">
+											<label>INSTRUCCIÓN AL HABITÁCULO:</label>
+											<label class="bmd-label-floating">MENOR DE 30 CMS</label>
+											<input type="checkbox" name="menor_30cms" id="menor_30cms"><br>
+											<label class="bmd-label-floating">MAYOR DE 30 CMS</label>
+											<input type="checkbox" name="mayor_30cms" id="mayor_30cms">
+										</div>
+										<div class="col-sm-4">
+											<label>USO DE CINTURÓN DE SEGURIDAD:</label><br>
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="cin_si" id="cin_si"><br>
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="cin_no" id="cin_no">
+										</div>
+										<div class="col-sm-4">
+											<label>USO DE BOLSA DE AIRE:</label><br>
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="volsa_si" id="volsa_si"><br>
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="volsa_no" id="volsa_no">
+										</div>
+									</div><br><br>
+									<div class="row">
+										<div class="col-sm-4">
+											<label>USO DE HERRAMIENTA MANUAL:</label><br>
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="manual_si" id="manual_si"><br>
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="manual_no" id="">
+										</div>
+										<div class="col-sm-4">
+											<label>USO DE QUIJADA DE LA VIDA:</label><br>
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="quijada_si" id="quijada_si"><br>
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="quijada_no" id="quijada_no">
+										</div>
+										<div class="col-sm-3">
+											<label for="tiemp_liberacion">TIEMPO DE LIBERACIÓN DEL PACIENTE</label>
+											<input type="text" class="form-control" name="tiem_liberacion"
+												id="tiemp_liberacion">
+										</div>
+									</div><br><br>
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="lg_viaje" >LUGAR EN EL QUE VIAJABA</label>
+											<input type="text" class="form-control" name="lg_viaje" id="lg_viaje">
+										</div>
+										<div class="col-sm-4">
+											<label>MOTOCICLISTA CON CASCO:</label><br>
+											<label class="bmd-label-floating">SI</label>
+											<input type="checkbox" name="moto_csi" id="moto_csi"><br>
+											<label class="bmd-label-floating">NO</label>
+											<input type="checkbox" name="moto_cno" id="moto_cno">
+										</div>
+									</div><br><br>
+									<div class="row">
+										<div class="col-sm-12">
+											<label for="c_atropellado" >COLOR DE LA ROPA DEL ATROPELLADO:</label>
+											<input type="text" class="form-control" name="c_atropellado"
+												id="c_atropellado">
+										</div>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">RESULTADO</p><!--principal 10-->
+									<p class="text-center"></p>
+									<div class="row">
+										<div class="col-sm-4">
+											<label>NO SE ENCONTRÓ EN EL INCIDENTE:</label>
+											<input type="checkbox" name="" id="">
+										</div>
+										<div class="col-sm-4">
+											<label>ATENDIDO EN EL LUGAR</label>
+											<input type="checkbox" name="" id="">
+										</div>
+										<div class="col-sm-4">
+											<label>NO SE ENCONTRÓ AL PACIENTE</label>
+											<input type="checkbox" name="" id="">
+										</div>
+									</div><br><br>
+									<div class="row">
+										<div class="col-sm-4">
+											<label>SE TRASLADO:</label>
+											<input type="checkbox" name="" id="">
+										</div>
+										<div class="col-sm-4">
+											<label>NO AMERITO EL TRASLADO</label>
+											<input type="checkbox" name="" id="">
+										</div>
+										<div class="col-sm-4">
+											<label>SE NEGÓ AL TRASLADO</label>
+											<input type="checkbox" name="" id="">
+										</div>
+									</div><br><br>
+									<div class="row">
+										<div class="col-sm-4">
+											<label>ATENDIÓ OTRA INSTITUCIÓN:</label><br>
+											<label class="bmd-label-floating">CRUZ ROJA</label>
+											<input type="checkbox" name="" id="">
+										</div>
+										<div class="col-sm-2">
+											<label class="bmd-label-floating">OTRO:</label>
+											<input type="checkbox" name="" id="">
+										</div>
+										<div class="col-sm-6">
+											<label for="esc_resultado" >ESPECIFIQUE:</label>
+											<input type="text" class="form-control" id="esc_resultado" name="esc_resultado"
+												placeholder="Describe lo acontecido">
+										</div>
+									</div><br><br>
+									<div class="row">
+										<div class="col-sm-4">
+											<label for="time_traslado">TIEMPO DE TRASLADO:</label>
+											<input type="text" class="form-control" id="time_traslado" name="time_traslado"
+												placeholder="Describe lo acontecido">
+										</div>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion -->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">EMBARAZADA</p><!--principal 11-->
+									<div class="row text-center">
+										<div class="col-sm-3 text-center">
+											<label for="ant_gine">Dia</label>
+											<input type="text" class="form-control" id="ant_gine">
+											<label>Mes</label>
+											<input type="text" class="form-control">
+											<label>Año</label>
+											<input type="text" class="form-control">
+										</div>
+										<div class="col-sm-3 text-center">
+											<label for="ant_gine">Gesta</label>
+											<input type="text" class="form-control" id="ant_gine">
+											<label>Para</label>
+											<input type="text" class="form-control">
+											<label>Aborto</label>
+											<input type="text" class="form-control">
+											<label>Cesaria</label>
+											<input type="text" class="form-control">
+										</div>
+										<div class="col-sm-3 text-center">
+											<label for="">Cefalea:</label><br>
+											<label for="" class="from-label">SI</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">NO</label>
+											<input type="checkbox" name="" id="" value="0"><br><br>
+											<label>Zumbido de oidos</label><br>
+											<label for="" class="from-label">SI</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">NO</label>
+											<input type="checkbox" name="" id="" value="0" ><br><br>
+											<label>Fosfenos</label><br>
+											<label for="" class="from-label">SI</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">NO</label>
+											<input type="checkbox" name="" id="" value="0" >
+										</div>
+										<div class="col-sm-3 text-center">
+											<label for="ant_gine">Salida de Liquidos Transvaginal</label><br>
+											<label for="" class="from-label">SI</label>
+											<input type="checkbox" name="" id="" value="0"><br>
+											<label for="" class="from-label">NO</label>
+											<input type="checkbox" name="" id="" value="0" >
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center">
+										<div class="col-sm-3 text-center">
+											<label for="ant_gine">Coloracion:</label><br><br>
+											<label for="ant_gine">Transparente:</label>
+											<input type="checkbox" name="" id="" value="0"><br>
+											<label for="" class="from-label">Amarillo</label>
+											<input type="checkbox" name="" id="" value="0" ><br>
+											<label for="" class="from-label">Rojo</label>
+											<input type="checkbox" name="" id="" value="0" ><br>
+											<label for="" class="from-label">Verde</label>
+											<input type="checkbox" name="" id="" value="0"><br>
+											<label for="" class="from-label">Negro</label>
+											<input type="checkbox" name="" id="" value="0" >
+										</div>
+										<div class="col-sm-3 text-center">
+											<label for="">Cantidad:</label><br><br>
+											<label>Escaso</label>
+											<input type="checkbox" name="" id="" value="0"><br><br>
+											<label for="" class="from-label">Regular</label>
+											<input type="checkbox" name="" id="" value="0"><br><br>
+											<label for="" class="from-label">Abundante</label>
+											<input type="checkbox" name="" id="" value="0">
+										</div>
+										<div class="col-sm-6 text-center">
+											<label for="">Movimientos Fetales:</label><br>
+											<label>Presentes</label>
+											<input type="text" class="form-control" id="ant_gine">
+											<label for="" class="from-label">Ausentes</label>
+											<input type="text" class="form-control" id="ant_gine">
+											<label for="" class="from-label">LCF</label>
+											<input type="text" class="form-control" id="ant_gine">
+										</div>
+									</div>
+<hr>
+									<div class="row text-center">
+										<div class="col-sm-3 text-center">
+											<label for="ant_gine">Contraccion Uterina:</label><br>
+											<label for="ant_gine">SI</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">NO</label>
+											<input type="checkbox" name="" id="" value="0" ><br><br>
+											<label for="" class="from-label">NUMERO x</label>
+											<input type="text" class="form-control" id="ant_gine">
+											<label for="" class="from-label">DURACION</label>
+											<input type="text" class="form-control" id="ant_gine">
+										</div>
+										<div class="col-sm-3 text-center">
+											<label for="">T/A:</label><br>
+											<input type="text" class="form-control" id="ant_gine">
+											<label for="" class="from-label">TEMP°C</label>
+											<input type="text" class="form-control" id="ant_gine"><br>
+											<label for="" class="from-label">EDEMAS</label><br>
+											<label for="" class="from-label">SI</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">NO</label>
+											<input type="checkbox" name="" id="" value="0">
+										</div>
+										<div class="col-sm-6 text-center">
+											<p class="text-center ">ATENCION AL RECIEN NACIDO</p>
+											<label for="">Recien Nacido:</label><br>
+											<label for="" class="from-label">Muerto</label>
+											<input type="text" class="form-control" id="ant_gine">
+											<label for="" class="from-label">Vivo</label>
+											<input type="text" class="form-control" id="ant_gine">
+											<label for="" class="from-label">HORA DE NACIMIENTO</label>
+											<input type="text" class="form-control" id="ant_gine">
+										</div>
+									</div>
+									<hr>
+									<div class="row text-center">
+										<div class="col-sm-3 text-center">
+											<label for="ant_gine">SEXO:</label><br>
+											<label for="ant_gine">HOMBRE</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">MUJER</label>
+											<input type="checkbox" name="" id="" value="0" ><br><br>
+											<label for="" class="from-label">ASPIRACION DE SECRECIONES</label><br>
+											<label for="" class="from-label">SI</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">NO</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">REANIMACION NEONATAL</label><br>
+											<label for="" class="from-label">SI</label>
+											<input type="checkbox" name="" id="" value="0">
+											<label for="" class="from-label">NO</label>
+											<input type="checkbox" name="" id="" value="0"><br>
+											<label for="">Tiempo:</label>
+											<input type="text" class="form-control" id="ant_gine">
+										</div>
+										<div class="col-sm-5 text-center">
+											<label for="">Frecuencia Cardiaca:</label><br>
+											<input type="text" class="form-control" id="ant_gine"><br>
+											<label for="" class="from-label">Valoracion APGAR:</label>
+											<input type="text" class="form-control" id="ant_gine"><br>
+											<label for="" class="from-label">Valoracion Silverman:</label><br>
+											<input type="text" class="form-control" id="ant_gine">
+										</div>
+									</div>
+
+								</div>
+								<br>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<div class="container-fluid"><!--NOTA DE AVISO AL PACIENTE Y A LAS AUTORIDADES-->
+									<div class="col-sm-12">
+										<div class="card">
+											<div class="card-body">
+												<p class="text-center roboto-medium">HAGO CONSTAR QUE ME FUERON OFRECIDOS LOS SERVICIOS MÉDICOS DE URGENCIA Y SE ME INFORMO LAS POSIBLES COMPLICACIONES Y CONSECUENCIAS DE NO SER ATENDIDO. SIN EMBARGO, HE DECIDIDO POR VOLUNTAD PROPIA, NO ACEPTAR TRATAMIENTO ALGUNO O TRASLADO A UNA UNIDAD MÉDICA.</p>
+											</div>
+										</div>
+									</div><br>
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="nbre" >Nombre:</label>
+											<input type="text" class="form-control" id="nbre" name="nbre" placeholder="Describe lo acontecido">
+											<label for="fa" >Hora:</label>
+											<input type="time" class="form-control" id="fa" name="fa" placeholder="Describe lo acontecido">
+										</div>
+										<div class="col-sm-6">
+											<span class="d-block pb-2">FIRME AQUÍ:</span>
+											<div class="signature mb-2">
+												<canvas id="canvas"
+													style="border: 1px dashed black; width: 100%; height: 200px;"></canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium" for="perte_paciente" >PERTENENCIAS DEL PACIENTE</p> <!--principal 12-->
+									<input type="text" class="form-control" id="perte_paciente" name="perte_paciente" placeholder="Describe lo acontecido">
+									<br>
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="nft" >Nombre y Firma de Trabajo Social:</label>
+											<input type="text" class="form-control" id="nft" name="nft" placeholder="Describe lo acontecido">
+										</div>
+										<div class="col-sm-6">
+											<span class="d-block pb-2">FIRME AQUÍ:</span>
+											<div class="signature mb-2">
+												<canvas id="signatureCanvas2"
+													style="border: 1px dashed black; width: 100%; height: 200px;"></canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium" for="obii" >OBSERVACIONES</p><!--principal 13-->
+									<input type="text" class="form-control" id="obii" name="obii" placeholder="Describe lo acontecido">
+								</div>
+								<hr style="border:0px; border-top: 5px double #000;">
+								<br><!--separacion-->
+								<div class="container-fluid">
+									<p class="text-center roboto-medium">RECEPCIÓN DEL USUARIO :</p><!--principal 14-->
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="unidad_nedica" >UNIDAD MÉDICA QUE RECIBE:</label>
+											<input type="text" class="form-control" id="unidad_nedica" name="unidad_nedica" placeholder="Describe lo acontecido">
+										</div>
+										<div class="col-sm-6">
+											<label for="hora_recepcion" >HORA:</label>
+											<input type="time" class="form-control" id="hora_recepcion" name="hora_recepcion" placeholder="Describe lo acontecido">
+										</div>
+									</div><br><br>
+									<div class="row">
+										<div class="col-sm-6">
+											<label for="medico_recibe">MÉDICO QUE RECIBE</label>
+											<input type="text" class="form-control" id="medico_recibe" name="medico_recibe" placeholder="Describe lo acontecido">
+											<br>
+											<span class="d-block pb-2">FIRME AQUÍ:</span>
+											<div class="signature mb-2">
+												<canvas id="signatureCanvas3"
+													style="border: 1px dashed black; width: 100%; height: 200px;"></canvas>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<label for="jefe_servicio" >JEFE DE SERVICIO</label>
+											<input type="text" class="form-control" id="jefe_servicio" name="jefe_servicio" placeholder="Describe lo acontecido">
+											<br>
+											<span class="d-block pb-2">FIRME AQUÍ:</span>
+											<div class="signature mb-2">
+												<canvas id="signatureCanvas4"
+													style="border: 1px dashed black; width: 100%; height: 200px;"></canvas>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div><!--fin del lineado del contenido-->
+						</fieldset>
+						<p class="text-center" style="margin-top: 40px;">
+							<button type="reset" class="btn btn-raised btn-secondary btn-sm"><i class="far fa-trash-alt"></i>LIMPIAR</button><!--boton de acciones-->
+							<button type="submit" class="btn btn-raised btn-info btn-sm"><i class="fas fa-clipboard-list fa-fw"></i>IMPRIMIR</button><!--boton de acciones-->
+						</p>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!--enlace de librerias o link-->
+	<script src="../js/jquery-3.7.0.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../js/bootstrap-material-design.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/hoja_paciente.js"></script>
+	<script src="../js/jspdf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+</body>
+
+</html>
